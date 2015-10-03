@@ -55,12 +55,11 @@ namespace workshop_2.model.DAL
                         }
                     }
                     rtnUsers.TrimExcess();
-                    Console.Write(rtnUsers[0].Name);
                 }
             }
             catch (Exception)
             {
-                throw new Exception("Fel när datan skulle sparas");
+                throw new Exception("Fel när datan skulle hämtas");
             }
         }
     }
