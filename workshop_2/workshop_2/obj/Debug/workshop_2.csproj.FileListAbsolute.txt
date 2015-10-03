@@ -1,1 +1,6 @@
 C:\Users\User\Documents\GitHub\OOM_Workshop_2\workshop_2\workshop_2\bin\Debug\workshop_2.exe.config
+C:\Users\User\Documents\GitHub\OOM_Workshop_2\workshop_2\workshop_2\obj\Debug\workshop_2.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\GitHub\OOM_Workshop_2\workshop_2\workshop_2\bin\Debug\workshop_2.exe
+C:\Users\User\Documents\GitHub\OOM_Workshop_2\workshop_2\workshop_2\bin\Debug\workshop_2.pdb
+C:\Users\User\Documents\GitHub\OOM_Workshop_2\workshop_2\workshop_2\obj\Debug\workshop_2.exe
+C:\Users\User\Documents\GitHub\OOM_Workshop_2\workshop_2\workshop_2\obj\Debug\workshop_2.pdb
