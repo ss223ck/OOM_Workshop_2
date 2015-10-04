@@ -17,27 +17,32 @@ namespace workshop_2.controller
 
         public void startApplication()
         {
+            ComandValues cmdValues;
             do
             {
                 startView.StartOptions();
-                if (startView.GetKeyPressed() == ComandValues.Member)
+                cmdValues = startView.GetKeyPressed();
+                switch (cmdValues)
                 {
-                    Console.Clear();
-                    MembersControl();
+                    case ComandValues.Member:
+                        Console.Clear();
+                        MembersControl();
+                        break;
+                    case ComandValues.Boat:
+                        Console.Clear();
+                        BoatControll();
+                        break;
+                    case ComandValues.Quit:
+                        Console.Clear();
+                        MembersControl();
+                        break;
+                    default:
+                        cmdValues = ComandValues.Faulty;
+                        Console.Clear();
+                        startView.AskNewInput();
+                        break;
                 }
-                else if (startView.GetKeyPressed() == ComandValues.Boat)
-                {
-                    BoatControll();
-                }
-                else if (startView.GetKeyPressed() == ComandValues.Quit)
-                {
-                    return;
-                }
-                else
-                {
-                    startView.AskNewInput();
-                }
-            } while (startView.GetKeyPressed() == ComandValues.Faulty);
+            } while (cmdValues == ComandValues.Faulty);
         }
 
         private void BoatControll()
@@ -47,7 +52,38 @@ namespace workshop_2.controller
 
         private void MembersControl()
         {
-            throw new NotImplementedException();
+            ComandValues cmdValues;
+            do
+            {
+                startView.StartOptions();
+                cmdValues = startView.GetKeyPressed();
+                switch (cmdValues)
+                {
+                case ComandValues.Add:
+                    Console.Clear();
+                    MembersControl();
+                    break;
+                case ComandValues.Get:
+                    Console.Clear();
+                    BoatControll();
+                    break;
+                case ComandValues.Update:
+                    Console.Clear();
+                    MembersControl();
+                    break;
+                case ComandValues.Delete:
+                    Console.Clear();
+                    MembersControl();
+                    break;
+                case ComandValues.Quit:
+                    return;
+                default:
+                    cmdValues = ComandValues.Faulty;
+                    Console.Clear();
+                    startView.AskNewInput();
+                    break;
+                }
+            } while (cmdValues == ComandValues.Faulty);
         }
     }
 }

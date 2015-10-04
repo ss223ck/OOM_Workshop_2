@@ -24,7 +24,7 @@ namespace workshop_2.view
 
         public void ShowMemberOption()
         {
-            Console.WriteLine(string.Format("Press '{0}' to get member, '{1}' to add member, '{2}' to delete member or '{3}' to update memeber", GetGetKey, GetAddKey, GetDeleteKey, GetUpdateKey));
+            Console.WriteLine(string.Format("Press '{0}' to get members, '{1}' to add member, '{2}' to delete member or '{3}' to update memeber", GetGetKey, GetAddKey, GetDeleteKey, GetUpdateKey));
         }
     }
 }
