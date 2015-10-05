@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using workshop_2.model;
 using workshop_2.view;
 
 namespace workshop_2.controller
@@ -26,16 +27,14 @@ namespace workshop_2.controller
                 {
                     case ComandValues.Member:
                         Console.Clear();
-                        MembersControl();
+                        CrudeControl(cmdValues);
                         break;
                     case ComandValues.Boat:
                         Console.Clear();
-                        BoatControll();
+                        CrudeControl(cmdValues);
                         break;
                     case ComandValues.Quit:
-                        Console.Clear();
-                        MembersControl();
-                        break;
+                        return;
                     default:
                         cmdValues = ComandValues.Faulty;
                         Console.Clear();
@@ -44,46 +43,61 @@ namespace workshop_2.controller
                 }
             } while (cmdValues == ComandValues.Faulty);
         }
-
-        private void BoatControll()
+        
+        private void CrudeControl(ComandValues cmdValues)
         {
-            throw new NotImplementedException();
-        }
-
-        private void MembersControl()
-        {
-            ComandValues cmdValues;
+            ComandValues cmdValuesOption;
             do
             {
-                startView.StartOptions();
-                cmdValues = startView.GetKeyPressed();
-                switch (cmdValues)
+                startView.ShowCrudeOption(cmdValues);
+                cmdValuesOption = startView.GetKeyPressed();
+                switch (cmdValuesOption)
                 {
                 case ComandValues.Add:
                     Console.Clear();
-                    MembersControl();
+                    AddFunctionality(cmdValues);
                     break;
                 case ComandValues.Get:
                     Console.Clear();
-                    BoatControll();
                     break;
                 case ComandValues.Update:
                     Console.Clear();
-                    MembersControl();
                     break;
                 case ComandValues.Delete:
                     Console.Clear();
-                    MembersControl();
                     break;
                 case ComandValues.Quit:
                     return;
                 default:
-                    cmdValues = ComandValues.Faulty;
+                    cmdValuesOption = ComandValues.Faulty;
                     Console.Clear();
                     startView.AskNewInput();
                     break;
                 }
-            } while (cmdValues == ComandValues.Faulty);
+            } while (cmdValuesOption == ComandValues.Faulty);
+        }
+        private void AddFunctionality(ComandValues cmdValues)
+        {
+            bool isSaved;
+            do
+            {
+                User newUser;
+                newUser = startView.AddNew(cmdValues);
+
+                CrudBLL crdBLL = new CrudBLL();
+                isSaved = crdBLL.SaveMember(newUser);
+
+                if (isSaved)
+                {
+                    startView.SuccessMessage(cmdValues);
+                    return;
+                }
+                else
+                {
+                    startView.ErrorAddingMember();
+                } 
+            } while (isSaved == false);
+            
         }
     }
 }

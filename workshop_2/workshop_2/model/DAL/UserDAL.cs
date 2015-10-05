@@ -24,7 +24,7 @@ namespace workshop_2.model.DAL
             _connectionString = ConfigurationManager.ConnectionStrings["BoatClubConnection"].ConnectionString;
         }
 
-        public void GetUsers(int UserID = 0)
+        public List<User> GetUsers(int UserID = 0)
         {
             try
             {
@@ -55,11 +55,35 @@ namespace workshop_2.model.DAL
                         }
                     }
                     rtnUsers.TrimExcess();
+                    return rtnUsers;
                 }
             }
             catch (Exception)
             {
                 throw new Exception("Fel när datan skulle hämtas");
+            }
+        }
+
+        public void AddMember(User user)
+        {
+            try
+            {
+                using (SqlConnection conn = CreateConnection())
+                {
+                    SqlCommand sqlCmd = new SqlCommand("appSchema.usp_AddMember", conn);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+
+                    sqlCmd.Parameters.Add("@Name", SqlDbType.VarChar, 50).Value = user.Name;
+                    sqlCmd.Parameters.Add("@Appartment", SqlDbType.Int, 4).Value = user.PersonalNumber;
+
+                    conn.Open();
+                    sqlCmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Fel när datan skulle sparas");
             }
         }
     }
