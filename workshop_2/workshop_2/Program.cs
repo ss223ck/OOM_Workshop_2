@@ -15,7 +15,15 @@ namespace workshop_2
         {
             StartView strtView = new StartView();
             AppController appCont = new AppController(strtView);
-            appCont.startApplication();
+
+            try
+            {
+                appCont.startApplication();
+            }
+            catch (Exception)
+            {
+                return;
+            }
         }
     }
 }

@@ -46,6 +46,7 @@
     <Compile Include="model\Boat.cs" />
     <Compile Include="model\CrudBLL.cs" />
     <Compile Include="model\DAL\UserDAL.cs" />
+    <Compile Include="model\MemberInformation.cs" />
     <Compile Include="model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

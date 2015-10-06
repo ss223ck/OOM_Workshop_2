@@ -42,7 +42,7 @@ namespace workshop_2.model.DAL
                     {
                         var usrUserID = reader.GetOrdinal("MemberID");
                         var usrName = reader.GetOrdinal("Name");
-                        var usrPersonalKey = reader.GetOrdinal("PersonalNumber");
+                        var usrPersonalKey = reader.GetOrdinal("Personalnumber");
 
                         while (reader.Read())
                         {
@@ -64,17 +64,100 @@ namespace workshop_2.model.DAL
             }
         }
 
+        public List<Boat> GetBoats(int BoatID = 0)
+        {
+            try
+            {
+                using (SqlConnection conn = CreateConnection())
+                {
+                    List<Boat> rtnBoat = new List<Boat>(100);
+
+                    SqlCommand sqlCmd = new SqlCommand("applicationSchema.usp_GetBoats", conn);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    sqlCmd.Parameters.Add("@BoatID", SqlDbType.Int, 4).Value = BoatID;
+
+                    conn.Open();
+
+                    using (var reader = sqlCmd.ExecuteReader())
+                    {
+                        var BoatBoatID = reader.GetOrdinal("BoatID");
+                        var BoatPersonalKey = reader.GetOrdinal("Personalnumber");
+                        var BoatType = reader.GetOrdinal("BoatType");
+                        var BoatLenght = reader.GetOrdinal("BoatLenght");
+
+                        while (reader.Read())
+                        {
+                            rtnBoat.Add(new Boat
+                            {
+                                BoatID = reader.GetInt32(BoatBoatID),
+                                Personalnumber = reader.GetInt32(BoatPersonalKey),
+                                BoatType = reader.GetString(BoatType),
+                                BoatLenght = reader.GetInt32(BoatLenght)
+                            });
+                        }
+                    }
+                    rtnBoat.TrimExcess();
+                    return rtnBoat;
+                }
+            }
+            catch (Exception)
+            {
+                throw new Exception("Fel när datan skulle hämtas");
+            }
+        }
+        public List<Boat> GetMembersBoats(int PersonalNumber = 0)
+        {
+            try
+            {
+                using (SqlConnection conn = CreateConnection())
+                {
+                    List<Boat> rtnBoat = new List<Boat>(100);
+
+                    SqlCommand sqlCmd = new SqlCommand("applicationSchema.usp_GetMembersBoats", conn);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    sqlCmd.Parameters.Add("@Personalnumber", SqlDbType.Int, 4).Value = PersonalNumber;
+
+                    conn.Open();
+
+                    using (var reader = sqlCmd.ExecuteReader())
+                    {
+                        var BoatBoatID = reader.GetOrdinal("BoatID");
+                        var BoatPersonalKey = reader.GetOrdinal("Personalnumber");
+                        var BoatType = reader.GetOrdinal("BoatType");
+                        var BoatLenght = reader.GetOrdinal("BoatLenght");
+
+                        while (reader.Read())
+                        {
+                            rtnBoat.Add(new Boat
+                            {
+                                BoatID = reader.GetInt32(BoatBoatID),
+                                Personalnumber = reader.GetInt32(BoatPersonalKey),
+                                BoatType = reader.GetString(BoatType),
+                                BoatLenght = reader.GetInt32(BoatLenght)
+                            });
+                        }
+                        rtnBoat.TrimExcess();
+                        return rtnBoat;
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw new Exception("Fel när datan skulle hämtas");
+            }
+        }
+
         public void AddMember(User user)
         {
             try
             {
                 using (SqlConnection conn = CreateConnection())
                 {
-                    SqlCommand sqlCmd = new SqlCommand("appSchema.usp_AddMember", conn);
+                    SqlCommand sqlCmd = new SqlCommand("applicationSchema.usp_AddMember", conn);
                     sqlCmd.CommandType = CommandType.StoredProcedure;
 
                     sqlCmd.Parameters.Add("@Name", SqlDbType.VarChar, 50).Value = user.Name;
-                    sqlCmd.Parameters.Add("@Appartment", SqlDbType.Int, 4).Value = user.PersonalNumber;
+                    sqlCmd.Parameters.Add("@Personalnumber", SqlDbType.Int, 4).Value = user.PersonalNumber;
 
                     conn.Open();
                     sqlCmd.ExecuteNonQuery();
@@ -84,6 +167,125 @@ namespace workshop_2.model.DAL
             {
 
                 throw new Exception("Fel när datan skulle sparas");
+            }
+        }
+
+        public void AddBoat(Boat newBoat)
+        {
+            try
+            {
+                using (SqlConnection conn = CreateConnection())
+                {
+                    SqlCommand sqlCmd = new SqlCommand("applicationSchema.usp_AddBoat", conn);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+
+                    sqlCmd.Parameters.Add("@Personalnumber", SqlDbType.Int, 4).Value = newBoat.Personalnumber;
+                    sqlCmd.Parameters.Add("@BoatType", SqlDbType.VarChar, 50).Value = newBoat.BoatType;
+                    sqlCmd.Parameters.Add("@BoatLenght", SqlDbType.Float, 4).Value = newBoat.BoatLenght;
+
+                    conn.Open();
+                    sqlCmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Fel när datan skulle sparas");
+            }
+        }
+
+        public void UpdateMember(User user, int userPersonalNumber)
+        {
+            try
+            {
+                using (SqlConnection conn = CreateConnection())
+                {
+                    SqlCommand sqlCmd = new SqlCommand("applicationSchema.usp_UpdateMember", conn);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+
+                    sqlCmd.Parameters.Add("@Personalnumberold", SqlDbType.Int, 4).Value = userPersonalNumber;
+                    sqlCmd.Parameters.Add("@Name", SqlDbType.VarChar, 50).Value = user.Name;
+                    sqlCmd.Parameters.Add("@Personalnumber", SqlDbType.VarChar, 50).Value = user.PersonalNumber;
+
+                    conn.Open();
+                    sqlCmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Fel när datan skulle sparas");
+            }
+        }
+
+        public void UpdateBoat(Boat boat)
+        {
+            try
+            {
+                using (SqlConnection conn = CreateConnection())
+                {
+                    SqlCommand sqlCmd = new SqlCommand("applicationSchema.usp_UpdateBoat", conn);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+
+                    sqlCmd.Parameters.Add("@BoatID", SqlDbType.Int, 4).Value = boat.BoatID;
+                    sqlCmd.Parameters.Add("@Personalnumber", SqlDbType.VarChar, 50).Value = boat.Personalnumber;
+                    sqlCmd.Parameters.Add("@BoatType", SqlDbType.VarChar, 50).Value = boat.BoatType;
+                    sqlCmd.Parameters.Add("@BoatLenght", SqlDbType.VarChar, 50).Value = boat.BoatLenght;
+
+                    conn.Open();
+                    sqlCmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Fel när datan skulle sparas");
+            }
+        }
+
+
+
+        public void DeleteMember(int p)
+        {
+            try
+            {
+                using (var conn = CreateConnection())
+                {
+                    var sqlCmd = new SqlCommand("applicationSchema.usp_DeleteMember", conn);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+
+                    sqlCmd.Parameters.Add("@Personalnumber", SqlDbType.Int, 4).Value = p;
+
+                    conn.Open();
+
+                    sqlCmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception)
+            {
+                throw new Exception("Error when deleting member");
+            }
+        }
+
+        public void DeleteBoat(int boatID)
+        {
+            try
+            {
+                using (var conn = CreateConnection())
+                {
+                    var sqlCmd = new SqlCommand("applicationSchema.usp_DeleteBoat", conn);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+
+                    sqlCmd.Parameters.Add("@BoatID", SqlDbType.Int, 4).Value = boatID;
+
+                    conn.Open();
+
+                    sqlCmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception)
+            {
+                throw new Exception("Error when deleting boat");
             }
         }
     }
