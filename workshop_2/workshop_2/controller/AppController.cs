@@ -204,18 +204,11 @@ namespace workshop_2.controller
                 {
                     startView.ShowMembersList(crudBLL.GetMembersAndBoats(), cmdValues);
                 }
-                switch (cmdValues)
+                else
                 {
-                    case ComandValues.CompactList:
-                        crudBLL.GetMembersAndBoats();
-                        break;
-                    case ComandValues.VerboseList:
-                        break;
-                    default:
-                        cmdValues = ComandValues.Faulty;
-                        startView.AskNewInput();
-                        break;
-                } 
+                    cmdValues = ComandValues.Faulty;
+                    startView.AskNewInput();
+                }
             } while (cmdValues == ComandValues.Faulty);
         }
 
