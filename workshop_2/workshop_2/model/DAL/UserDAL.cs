@@ -60,7 +60,7 @@ namespace workshop_2.model.DAL
             }
             catch (Exception)
             {
-                throw new Exception("Fel när datan skulle hämtas");
+                throw new Exception("Error when the datas was retrived");
             }
         }
 
@@ -102,7 +102,7 @@ namespace workshop_2.model.DAL
             }
             catch (Exception)
             {
-                throw new Exception("Fel när datan skulle hämtas");
+                throw new Exception("Error when the datas was retrived");
             }
         }
         public List<Boat> GetMembersBoats(int PersonalNumber = 0)
@@ -143,7 +143,7 @@ namespace workshop_2.model.DAL
             }
             catch (Exception)
             {
-                throw new Exception("Fel när datan skulle hämtas");
+                throw new Exception("Error when the datas was retrived");
             }
         }
 
@@ -166,7 +166,7 @@ namespace workshop_2.model.DAL
             catch (Exception)
             {
 
-                throw new Exception("Fel när datan skulle sparas");
+                throw new Exception("Error when the data was going to be saved");
             }
         }
 
@@ -190,7 +190,7 @@ namespace workshop_2.model.DAL
             catch (Exception)
             {
 
-                throw new Exception("Fel när datan skulle sparas");
+                throw new Exception("Error when the data was going to be saved");
             }
         }
 
@@ -214,7 +214,7 @@ namespace workshop_2.model.DAL
             catch (Exception)
             {
 
-                throw new Exception("Fel när datan skulle sparas");
+                throw new Exception("Error when the data was going to be saved");
             }
         }
 
@@ -239,7 +239,7 @@ namespace workshop_2.model.DAL
             catch (Exception)
             {
 
-                throw new Exception("Fel när datan skulle sparas");
+                throw new Exception("Error when the data was going to be saved");
             }
         }
 
