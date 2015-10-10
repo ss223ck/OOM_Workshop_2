@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace workshop_2.view
 {
-    enum ComandValues { Quit, Faulty, Boat, Member, Get, Update, Add, Delete, CompactList, VerboseList};
+    enum ComandValues { Quit, Faulty, Boat, Member, Get, Update, Add, Delete, CompactList, VerboseList, Specific};
     abstract class SuperView
     {
         const char quitKey = 'q';
@@ -27,6 +27,8 @@ namespace workshop_2.view
 
         const char VerboseListKey = 'v';
 
+        const char SpecificKey = 's';
+
         protected char GetQuitKey { get { return quitKey; } }
 
         protected char GetMemberKey { get { return memberKey; } }
@@ -44,6 +46,9 @@ namespace workshop_2.view
         protected char GetVerboseListKey { get { return VerboseListKey; } }
 
         protected char GetCompactListKey { get { return compactListKey; } }
+
+
+        protected char GetSpecificKey { get { return SpecificKey; } }
 
         public ComandValues GetConvertedInput(ConsoleKeyInfo cki)
         {
@@ -67,6 +72,8 @@ namespace workshop_2.view
                     return ComandValues.CompactList;
                 case VerboseListKey:
                     return ComandValues.VerboseList;
+                case SpecificKey:
+                    return ComandValues.Specific;
                 default:
                     return ComandValues.Faulty;
 

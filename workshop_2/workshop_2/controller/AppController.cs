@@ -10,10 +10,12 @@ namespace workshop_2.controller
 {
     class AppController
     {
-        public StartView startView{ get; private set; }
-        public AppController(StartView strtView)
+        public StartView StartView{ get; private set; }
+        public CrudBLL CrudBLL{ get; private set; }
+        public AppController(StartView strtView, CrudBLL crudBLL)
         {
-            startView = strtView;
+            StartView = strtView;
+            CrudBLL = crudBLL;
         }
 
         public void startApplication()
@@ -21,8 +23,8 @@ namespace workshop_2.controller
             ComandValues cmdValues;
             do
             {
-                startView.StartOptions();
-                cmdValues = startView.GetKeyPressed();
+                StartView.StartOptions();
+                cmdValues = StartView.GetKeyPressed();
                 switch (cmdValues)
                 {
                     case ComandValues.Member:
@@ -38,7 +40,7 @@ namespace workshop_2.controller
                     default:
                         cmdValues = ComandValues.Faulty;
                         Console.Clear();
-                        startView.AskNewInput();
+                        StartView.AskNewInput();
                         break;
                 }
             } while (cmdValues != ComandValues.Quit);
@@ -49,8 +51,8 @@ namespace workshop_2.controller
             ComandValues cmdValuesOption;
             do
             {
-                startView.ShowCrudeOption(cmdValues);
-                cmdValuesOption = startView.GetKeyPressed();
+                StartView.ShowCrudeOption(cmdValues);
+                cmdValuesOption = StartView.GetKeyPressed();
 
                 Console.Clear();
                 switch (cmdValuesOption)
@@ -99,7 +101,7 @@ namespace workshop_2.controller
                         return;
                     default:
                         cmdValuesOption = ComandValues.Faulty;
-                        startView.AskNewInput();
+                        StartView.AskNewInput();
                         break;
                 }
             } while (cmdValuesOption == ComandValues.Faulty);
@@ -107,107 +109,107 @@ namespace workshop_2.controller
 
         private void DeleteBoat()
         {
-            CrudBLL crudBLL = new CrudBLL();
             bool testIfDelete;
             do
             {
-                testIfDelete = crudBLL.DeleteBoat(startView.DeleteBoat());
+                testIfDelete = CrudBLL.DeleteBoat(StartView.DeleteBoat());
                 if (testIfDelete)
                 {
-                    startView.DeleteBoatSuccess();
+                    StartView.DeleteBoatSuccess();
                     return;
                 }
                 else
                 {
-                    startView.DeleteBoatFail();
+                    StartView.DeleteBoatFail();
                 }
             } while (!testIfDelete);
         }
 
         private void DeleteMember()
         {
-            CrudBLL crudBLL = new CrudBLL();
             bool testIfDelete;
             do
             {
-                testIfDelete = crudBLL.DeleteMember(startView.DeleteMember()); 
+                testIfDelete = CrudBLL.DeleteMember(StartView.DeleteMember()); 
                 if(testIfDelete)
                 {
-                    startView.DeleteMemberSuccess();
+                    StartView.DeleteMemberSuccess();
                     return;
                 }
                 else
                 {
-                    startView.DeleteMemberFailed();
+                    StartView.DeleteMemberFailed();
                 }
             } while (!testIfDelete);
         }
 
         private void UpdateBoat()
         {
-            CrudBLL crudBLL = new CrudBLL();
+            
             bool testIfExists;
             do
             {
-                Boat boat = startView.UpdateBoat();
-                List<Boat> boatList = crudBLL.GetBoats();
+                Boat boat = StartView.UpdateBoat(new Boat());
+                List<Boat> boatList = CrudBLL.GetBoats();
 
                 testIfExists = boatList.Any(x => x.BoatID == boat.BoatID);
                 if (testIfExists)
                 {
-                    crudBLL.UpdateBoat(boat);
+                    CrudBLL.UpdateBoat(boat);
                 }
                 else
                 {
-                    startView.WrongBoatInput();
+                    StartView.WrongBoatInput();
                 }
             } while (!testIfExists);
         }
 
         private void UpdateMember()
         {
-            CrudBLL crudBLL = new CrudBLL();
             bool testIfExists;
             do
             {
-                int userPersonalNumber = startView.UpdateMember();
-                List<User> UserList = crudBLL.GetMembers();
+                int userPersonalNumber = StartView.UpdateMember();
+                List<User> UserList = CrudBLL.GetMembers();
 
                 testIfExists = UserList.Any(x => x.PersonalNumber == userPersonalNumber);
                 if(testIfExists)
                 {
-                    crudBLL.UpdateMember(startView.ChangeMember(), userPersonalNumber);
+                    CrudBLL.UpdateMember(StartView.ChangeMember(new User()), userPersonalNumber);
+
                 }
                 else
                 {
-                    startView.WrongMemberInput();
+                    StartView.WrongMemberInput();
                 }
             } while (!testIfExists);
         }
 
         private void GetFunctionalityBoat()
         {
-            CrudBLL crudBLL = new CrudBLL();
-            List<Boat> boatlist = crudBLL.GetBoats();
-            startView.ShowBoats(boatlist);
+            List<Boat> boatlist = CrudBLL.GetBoats();
+            StartView.ShowBoats(boatlist);
         }
 
         private void GetFunctionalityMember()
         {
-            startView.ShowGetOptions();
             ComandValues cmdValues;
-            CrudBLL crudBLL = new CrudBLL();
             do
             {
-                cmdValues = startView.GetKeyPressed();
+                StartView.ShowGetOptions();
+                cmdValues = StartView.GetKeyPressed();
                 if(cmdValues == ComandValues.CompactList || cmdValues == ComandValues.VerboseList)
                 {
-                    startView.ShowMembersList(crudBLL.GetMembersAndBoats(), cmdValues);
+                    StartView.ShowMembersList(CrudBLL.GetMembersAndBoats(), cmdValues);
+                }
+                else if(cmdValues == ComandValues.Specific)
+                {
+                    StartView.ShowSpecificMember(CrudBLL.GetMembersAndBoats());
                 }
                 else
                 {
                     cmdValues = ComandValues.Faulty;
-                    startView.AskNewInput();
+                    StartView.AskNewInput();
                 }
             } while (cmdValues == ComandValues.Faulty);
         }
@@ -218,19 +220,18 @@ namespace workshop_2.controller
             do
             {
                 Boat newBoat;
-                newBoat = startView.AddNewBoat();
+                newBoat = StartView.AddNewBoat(new Boat());
 
-                CrudBLL crdBLL = new CrudBLL();
-                isSaved = crdBLL.SaveBoat(newBoat);
+                isSaved = CrudBLL.SaveBoat(newBoat);
 
                 if (isSaved)
                 {
-                    startView.SuccessMessage(cmdValues);
+                    StartView.SuccessMessage(cmdValues);
                     return;
                 }
                 else
                 {
-                    startView.ErrorAddingBoat();
+                    StartView.ErrorAddingBoat();
                 }
             } while (isSaved == false);
         }
@@ -240,19 +241,19 @@ namespace workshop_2.controller
             do
             {
                 User newUser;
-                newUser = startView.AddNewMember();
 
-                CrudBLL crdBLL = new CrudBLL();
-                isSaved = crdBLL.SaveMember(newUser);
+                newUser = StartView.AddNewMember(new User());
+
+                isSaved = CrudBLL.SaveMember(newUser);
 
                 if (isSaved)
                 {
-                    startView.SuccessMessage(cmdValues);
+                    StartView.SuccessMessage(cmdValues);
                     return;
                 }
                 else
                 {
-                    startView.ErrorAddingMember();
+                    StartView.ErrorAddingMember();
                 } 
             } while (isSaved == false);
             

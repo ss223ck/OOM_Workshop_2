@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using workshop_2.controller;
+using workshop_2.model;
 using workshop_2.model.DAL;
 using workshop_2.view;
 
@@ -14,7 +15,7 @@ namespace workshop_2
         static void Main(string[] args)
         {
             StartView strtView = new StartView();
-            AppController appCont = new AppController(strtView);
+            AppController appCont = new AppController(strtView, new CrudBLL());
 
             try
             {
