@@ -173,9 +173,11 @@ namespace workshop_2.controller
                 List<User> UserList = CrudBLL.GetMembers();
 
                 testIfExists = UserList.Any(x => x.PersonalNumber == userPersonalNumber);
+                User user = StartView.ChangeMember(new User());
+                user.PersonalNumber = userPersonalNumber;
                 if(testIfExists)
                 {
-                    CrudBLL.UpdateMember(StartView.ChangeMember(new User()), userPersonalNumber);
+                    CrudBLL.UpdateMember(user, userPersonalNumber);
 
                 }
                 else

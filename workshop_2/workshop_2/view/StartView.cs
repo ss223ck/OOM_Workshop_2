@@ -199,22 +199,7 @@ namespace workshop_2.view
                     Console.WriteLine("Try state a name again");
                 }
             } while (user.Name == "" || user.Name == null);
-            do
-            {
-                Console.Write("State personal number:");
-                string userNumber = Console.ReadLine();
-                int parsedNumber;
-                int.TryParse(userNumber, out parsedNumber);
-                if (parsedNumber == 0 )
-                {
-                    Console.Clear();
-                    Console.WriteLine("Try state a number again");
-                }
-                else
-                {
-                    user.PersonalNumber = parsedNumber;
-                }
-            } while (user.Name == "" || user.Name == null);
+            
             return user;
         }
 

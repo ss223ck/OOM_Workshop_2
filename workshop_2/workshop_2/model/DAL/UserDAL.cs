@@ -205,7 +205,7 @@ namespace workshop_2.model.DAL
 
                     sqlCmd.Parameters.Add("@Personalnumberold", SqlDbType.Int, 4).Value = userPersonalNumber;
                     sqlCmd.Parameters.Add("@Name", SqlDbType.VarChar, 50).Value = user.Name;
-                    sqlCmd.Parameters.Add("@Personalnumber", SqlDbType.VarChar, 50).Value = user.PersonalNumber;
+                    sqlCmd.Parameters.Add("@Personalnumber", SqlDbType.Int, 4).Value = user.PersonalNumber;
 
                     conn.Open();
                     sqlCmd.ExecuteNonQuery();
