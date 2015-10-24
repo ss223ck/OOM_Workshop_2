@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/PROGRAM FILES (X86)/MICROSOFT VISUAL STUDIO 12.0/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/ReverseEngineeringLog.xslt"?>
+<Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log" Label="Code Generation/Text Transformation Log">
+  <MessageClass Name="Message" Label="Message" Option="Show informational messages" />
+  <MessageClass Name="Warning" Label="Warning" Option="Show warnings" />
+  <MessageClass Name="Error" Label="Error" Option="Show errors" />
+  <MessageClass Name="Property" Label="Property" Option="Show metadata" />
+  <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
+  <Message Timestamp="2015-10-24T19:13:57" Importance="High" Text="Reverse Engineering Started." />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: '298ff661-417b-40e7-8d54-78ba62fc14d9' -  (ClassifierTemplateParameter)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::System' -  (Package)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::System::Char' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::System::Collections' -  (Package)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::System::Collections::Generic' -  (Package)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::System::Collections::Generic::List' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::System::Collections::Generic::List&lt;Boat‎&gt;' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::System::Collections::Generic::List&lt;MemberInformation‎&gt;' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::System::ConsoleKeyInfo' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2' -  (Package)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::model' -  (Package)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::model::Boat' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::model::MemberInformation' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::model::User' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view' -  (Package)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Medium" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::ComandValues' -  (Enumeration)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::ComandValues::Add' -  (EnumerationLiteral)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::ComandValues::Boat' -  (EnumerationLiteral)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::ComandValues::CompactList' -  (EnumerationLiteral)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::ComandValues::Delete' -  (EnumerationLiteral)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::ComandValues::Faulty' -  (EnumerationLiteral)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::ComandValues::Get' -  (EnumerationLiteral)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::ComandValues::Member' -  (EnumerationLiteral)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::ComandValues::Quit' -  (EnumerationLiteral)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::ComandValues::Specific' -  (EnumerationLiteral)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::ComandValues::Update' -  (EnumerationLiteral)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::ComandValues::VerboseList' -  (EnumerationLiteral)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Medium" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView' -  (Class)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::AddNewBoat' -  (Operation)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::AddNewBoat::boat' -  (Parameter)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::AddNewMember' -  (Operation)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::AddNewMember::user' -  (Parameter)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::AskNewInput' -  (Operation)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::ChangeMember' -  (Operation)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::ChangeMember::user' -  (Parameter)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::DeleteBoat' -  (Operation)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::DeleteBoatFail' -  (Operation)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::DeleteBoatSuccess' -  (Operation)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::DeleteMember' -  (Operation)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::DeleteMemberFailed' -  (Operation)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::DeleteMemberSuccess' -  (Operation)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::ErrorAddingBoat' -  (Operation)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::ErrorAddingMember' -  (Operation)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::GetKeyPressed' -  (Operation)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::ShowBoats' -  (Operation)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::ShowBoats::boatlist' -  (Parameter)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::ShowCrudeOption' -  (Operation)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::ShowCrudeOption::cmdValues' -  (Parameter)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::ShowGetOptions' -  (Operation)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::ShowMembersList' -  (Operation)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::ShowMembersList::cmdValues' -  (Parameter)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::ShowMembersList::list' -  (Parameter)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::ShowSpecificMember' -  (Operation)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::ShowSpecificMember::memberAndBoatList' -  (Parameter)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::StartOptions' -  (Operation)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::StartView' -  (Operation)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::SuccessMessage' -  (Operation)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::SuccessMessage::cmdValues' -  (Parameter)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::UpdateBoat' -  (Operation)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::UpdateBoat::boat' -  (Parameter)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::UpdateMember' -  (Operation)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::WrongBoatInput' -  (Operation)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::StartView::WrongMemberInput' -  (Operation)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Medium" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::SuperView' -  (Class)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::SuperView::addKey' -  (Property)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::SuperView::boatKey' -  (Property)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::SuperView::compactListKey' -  (Property)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::SuperView::deleteKey' -  (Property)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::SuperView::GetAddKey' -  (Property)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::SuperView::GetBoatKey' -  (Property)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::SuperView::GetCompactListKey' -  (Property)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::SuperView::GetConvertedInput' -  (Operation)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::SuperView::GetConvertedInput::cki' -  (Parameter)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::SuperView::GetDeleteKey' -  (Property)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::SuperView::GetGetKey' -  (Property)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::SuperView::getKey' -  (Property)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::SuperView::GetMemberKey' -  (Property)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::SuperView::GetQuitKey' -  (Property)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::SuperView::GetSpecificKey' -  (Property)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::SuperView::GetUpdateKey' -  (Property)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::SuperView::GetVerboseListKey' -  (Property)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::SuperView::memberKey' -  (Property)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::SuperView::quitKey' -  (Property)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::SuperView::SpecificKey' -  (Property)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::SuperView::SuperView' -  (Operation)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::SuperView::updatetKey' -  (Property)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'ClassDiagram::workshop_2::view::SuperView::VerboseListKey' -  (Property)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'Integer' -  (PrimitiveType)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: ClassDiagram::workshop_2::view::StartView to ClassDiagram::workshop_2::view::SuperView (Generalization)" />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="High" Text="(3) type(s) fully reverse engineered." />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="High" Text="(8) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
+  <Message Timestamp="2015-10-24T19:13:58" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
+</Log>
